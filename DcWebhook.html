@@ -64,7 +64,7 @@
   <div id="spamstart-message" style="display: none; text-align: center; color: green;">Spam started!</div>
   <div id="stopspam-message" style="display: none; text-align: center; color: red;">Spam stopped!</div>
     <input type="text" id="webhook-url" value="" placeholder="Webhook URL"> 
-    <textarea id="message" placeholder="Your message here..."></textarea>
+    <textarea id="message" maxlength="2000" placeholder="Your message here..."></textarea>
     <input type="file" id="image" accept="image/*,video/*">
     <div style="text-align: center;">
       <button id="send-button" class="send-button">Send</button>
