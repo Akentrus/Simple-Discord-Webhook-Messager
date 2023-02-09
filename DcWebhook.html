@@ -60,6 +60,9 @@
 </head>
 <body>
   <div id="chatbox">
+  <div id="msgsend-message" style="display: none; text-align: center; color: green;">Message sent!</div>
+  <div id="spamstart-message" style="display: none; text-align: center; color: green;">Spam started!</div>
+  <div id="stopspam-message" style="display: none; text-align: center; color: red;">Spam stopped!</div>
     <input type="text" id="webhook-url" value="" placeholder="Webhook URL"> 
     <textarea id="message" placeholder="Your message here..."></textarea>
     <input type="file" id="image" accept="image/*,video/*">
@@ -75,14 +78,26 @@
 
     document.getElementById("send-button").addEventListener("click", function() {
       sendMessage();
+    document.getElementById("msgsend-message").style.display = "block";
+      setTimeout(function() {
+    document.getElementById("msgsend-message").style.display = "none";
+  }, 3000);
     });
 
     document.getElementById("spam-button").addEventListener("click", function() {
       startSpam();
+    document.getElementById("spamstart-message").style.display = "block";
+      setTimeout(function() {
+    document.getElementById("spamstart-message").style.display = "none";
+  }, 3000);
     });
 
     document.getElementById("stop-button").addEventListener("click", function() {
       stopSpam();
+    document.getElementById("stopspam-message").style.display = "block";
+      setTimeout(function() {
+    document.getElementById("stopspam-message").style.display = "none";
+  }, 3000);
     });
 
     function sendMessage() {
