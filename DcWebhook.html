@@ -76,6 +76,7 @@
   <div id="spamstart-message" style="display: none; position: absolute; text-align: center; color: green; top: 0%; left: 41.5%;">Spam started!</div>
   <div id="stopspam-message" style="display: none; position: absolute; text-align: center; color: red; top: 0%; left: 41.5%;">Spam stopped!</div>
   <div id="clearchat-message" style="display: none; position: absolute; text-align: center; color: orange; top: 0%; left: 41.5%;">Chat cleared!</div>
+  <div id="clearpic-message" style="display: none;  position: absolute; text-align: center; color: green; top: 0%; left: 37.3%;">Cleared selected file!</div>
     <input type="text" id="webhook-url" value="" placeholder="Webhook URL"> 
     <textarea id="message" maxlength="2000" placeholder="Your message here..."></textarea>
     <input type="file" id="image" accept="image/*,video/*">
@@ -84,11 +85,23 @@
       <button id="spam-button" class="send-button">Spam</button>
       <button id="stop-button" class="send-button">Stop</button>
       <button id="clear-button" class="clear-button">Clear</button>
+      <button id="clearpic-button" style="position:absolute; left:273px; top:382px;" class="clearpic-button">Clear selected file</button>
     </div>
   </div>
 
   <script>
     var intervalId = null;
+	  
+    const clearpicButton = document.getElementById("clearpic-button");
+    const imageinput = document.getElementById("image");
+
+    clearpicButton.addEventListener("click", function() {
+    document.getElementById("image").value = null;
+    document.getElementById("clearpic-message").style.display = "block";
+      setTimeout(function() {
+    document.getElementById("clearpic-message").style.display = "none";
+  }, 1500);
+  });
 	
     const clearButton = document.getElementById("clear-button");
     const textArea = document.getElementById("message");
