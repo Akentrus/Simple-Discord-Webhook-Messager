@@ -38,7 +38,7 @@
       margin-bottom: 10px;
       padding: 10px;
       width: 100%;
-	  resize: none;
+      resize: none;
     }
 
     .send-button {
@@ -80,7 +80,7 @@
   <div id="clearchat-message" style="display: none; position: absolute; text-align: center; color: orange; top: 0%; left: 41.5%;">Chat cleared!</div>
   <div id="clearpic-message" style="display: none;  position: absolute; text-align: center; color: green; top: 0%; left: 37.3%;">Cleared selected file!</div>
     <input type="text" maxlength="300" id="webhook-url" value="" placeholder="Webhook URL">
-    <input type="text" id="username" name="username" placeholder="Bot Username" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+    <input type="text" id="username" name="username" maxlength="60" placeholder="Bot Username" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
     <span id="username-validation" style="color: red; margin-left: 5px; font-size: 16px; display: none;"> Cannot be empty</span>
     <textarea id="message" maxlength="2000" placeholder="Your message here..."></textarea>
     <input type="file" id="image" accept="image/*,video/*">
