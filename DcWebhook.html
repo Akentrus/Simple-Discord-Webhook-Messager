@@ -133,6 +133,14 @@
     document.getElementById("spamstart-message").style.display = "none";
   }, 1500);
     });
+
+    document.getElementById("stop-button").addEventListener("click", function() {
+      stopSpam();
+    document.getElementById("stopspam-message").style.display = "block";
+      setTimeout(function() {
+    document.getElementById("stopspam-message").style.display = "none";
+  }, 1500);
+    });
 	  
     var usernameText = document.getElementById("username");
     var usernameValidation = document.getElementById("username-validation");
@@ -147,14 +155,6 @@
       } else {
     usernameValidation.style.display = "none";
   }
-    });
-
-    document.getElementById("stop-button").addEventListener("click", function() {
-      stopSpam();
-    document.getElementById("stopspam-message").style.display = "block";
-      setTimeout(function() {
-    document.getElementById("stopspam-message").style.display = "none";
-  }, 1500);
     });
 
     function sendMessage() {
